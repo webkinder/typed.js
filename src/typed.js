@@ -97,7 +97,9 @@ export default class Typed {
         this.typewrite(this.strings[this.sequence[this.arrayPos]], this.strPos);
       } else {
         // Start typing
-        this.backspace(this.currentElContent, this.currentElContent.length);
+        (this.curLoop === 0) 
+          ? this.backspace(this.currentElContent, this.currentElContent.length) 
+          : this.typewrite(this.strings[this.sequence[this.arrayPos]], this.strPos);
       }
     }, this.startDelay);
   }
